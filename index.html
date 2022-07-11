@@ -26,6 +26,11 @@
 </head>
 <body>
 
+    <div class="loadingAnimation">
+        <div class="loading1"></div>
+        <div class="loading2"></div>
+    </div>
+
 
     <!-- HAMBURGER BUTTON -->
     <div class="hamburger-button">
@@ -38,7 +43,7 @@
     <main class="main">
 
         <header class="page-header">
-            <div class="page-header-container">
+            <div class="page-header-container data-cursor="-hidden"">
                 <nav class="nav-bar">
                     <div class="logo">
                         <img src="" alt="">
@@ -179,10 +184,9 @@
                         <!-- div with the icons of the projects -->
                         
                         <div class="project-section-icons-container">
-                            <a href=""><i class="fa-solid fa-folder"></i></a>
+                            <a class="code" href=""><i class="fa-solid fa-code"></i></a>
 
                             <div class="github-and-external-link">
-                                <a class="code" href=""><i class="fa-solid fa-code"></i></a>
                                 <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
@@ -203,12 +207,11 @@
                     <div class="project-info">
 
                         <!-- div with the icons of the projects -->
-
+                        
                         <div class="project-section-icons-container">
-                            <a href=""><i class="fa-solid fa-folder"></i></a>
+                            <a class="code" href=""><i class="fa-solid fa-code"></i></a>
 
                             <div class="github-and-external-link">
-                                <a class="code" href=""><i class="fa-solid fa-code"></i></a>
                                 <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
@@ -228,15 +231,15 @@
 
                     <div class="project-info">
 
-                           <!-- div with the icons of the projects -->
+                        <!-- div with the icons of the projects -->
+                        
                         <div class="project-section-icons-container">
-                            <a href=""><i class="fa-solid fa-folder"></i></a>
+                            <a class="code" href=""><i class="fa-solid fa-code"></i></a>
 
                             <div class="github-and-external-link">
-                                <a class="code" href=""><i class="fa-solid fa-code"></i></a>
                                 <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
-                        </div>     
+                        </div>   
 
                         <h1>weather web app</h1>
                         <p>I was interested in learning to work with APIs,so I found a well documented API and built a simple weather app with it.</p>
@@ -253,11 +256,11 @@
 
                     <div class="project-info">
                         <!-- div with the icons of the projects -->
+                        
                         <div class="project-section-icons-container">
-                            <a href=""><i class="fa-solid fa-folder"></i></a>
+                            <a class="code" href=""><i class="fa-solid fa-code"></i></a>
 
                             <div class="github-and-external-link">
-                                <a class="code" href=""><i class="fa-solid fa-code"></i></a>
                                 <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
@@ -277,15 +280,15 @@
 
                     <div class="project-info">
 
-                        <!-- div with the icons of the projects -->
-                     <div class="project-section-icons-container">
-                         <a href=""><i class="fa-solid fa-folder"></i></a>
+                           <!-- div with the icons of the projects -->
+                        
+                           <div class="project-section-icons-container">
+                            <a class="code" href=""><i class="fa-solid fa-code"></i></a>
 
-                         <div class="github-and-external-link">
-                             <a class="code" href=""><i class="fa-solid fa-code"></i></a>
-                             <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                         </div>
-                     </div>     
+                            <div class="github-and-external-link">
+                                <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>   
 
                      <h1>weather web app</h1>
                      <p>I was interested in learning to work with APIs,so I found a well documented API and built a simple weather app with it.</p>
@@ -302,15 +305,15 @@
                     <div class="project-info">
 
 
-                        <!-- div with the icons of the projects -->
-                        <div class="project-section-icons-container">
-                            <a href=""><i class="fa-solid fa-folder"></i></a>
+                         <!-- div with the icons of the projects -->
+                        
+                         <div class="project-section-icons-container">
+                            <a class="code" href=""><i class="fa-solid fa-code"></i></a>
 
                             <div class="github-and-external-link">
-                                <a class="code" href=""><i class="fa-solid fa-code"></i></a>
                                 <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
-                        </div>     
+                        </div>   
 
                         <h1>weather web app</h1>
                         <p>I was interested in learning to work with APIs,so I found a well documented API and built a simple weather app with it.</p>
@@ -347,15 +350,15 @@
                         <div class="name-email-container">
                             <!-- <label for="name" >Your name</label>  -->
 
-                            <input autocomplete="off" placeholder="your name" type="text" id="name"> <br>
+                            <input required autocomplete="off" class="sendMessageSectionInputs" placeholder="your name" type="text" id="name"> <br>
         
                             <!-- <label for="email">Your email address</label> <br> -->
-                            <input autocomplete="off" placeholder="your email address" type="text" id="email"> <br>
+                            <input required autocomplete="off" class="sendMessageSectionInputs" placeholder="your email address" type="email" id="email"> <br>
                    
                         </div>
 
                         <label for="message"></label><br>
-                        <textarea placeholder="message" name="" id="message" cols="40" rows="2"></textarea> <br>
+                        <textarea required class="sendMessageSectionInputs" placeholder="message" name="" id="message" cols="40" rows="2"></textarea> <br>
                         
                         <div class="button-container">
                             
