@@ -1,0 +1,1741 @@
+
+@import url('../cursor/cursor.css');
+
+$web-color:#000000;
+$web-color2:#00ff998f;
+$about-and-contact-color:#2007c2;
+$body-color:rgb(223, 236, 237);
+
+$web-font1:"Satoshi", sans-serif;
+$web-font2:"General Sans", sans-serif;
+// font weights
+
+$light:300;
+$regular:400;
+$medium:500;
+$bold:700;
+$black:900;
+
+//ALL ELEMENTS WITH Z INDEXES ::
+
+// 1.ABOUT section
+// 2.HAMBURGER button
+// 3.PAGE LOGO ON THE HEADER section
+// 4.LOADING PAGE ANIMATION
+//5.TOP PAGE SECTION
+//6.THE DIVS ON THR RIGHT AND LEFT SIDEO OF THE SCREEN
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    
+}
+
+body{
+    font-family: $web-font1,$web-font2;
+    display: flex;
+    background-color: $body-color;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    // border: 2px solid red;
+
+    //MODIFYING THE SCROLLB AR
+
+    &::-webkit-scrollbar{
+        width: .9rem;
+        height: 1rem;
+        // background-color: blue;
+        // display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background:#090f1d ;
+        background-color: transparent;
+        // background-color: red;
+        // border: 1px solid rgb(15, 19, 61);
+        // margin-block: 0.5em;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #25276a;
+        // background-color: black;
+        // background-color: black;
+        border-radius: 5rem;
+
+}
+
+
+
+
+}
+
+
+//THE HAMBURGER BUTTON
+
+.hamburger-button{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    display: none;
+    z-index: 444;  //Z INDEX SHOULD BE HIGHER THAN THE LINKS CONTAINER
+    // border: 1px solid blue;
+    span{
+        background-color: rgb(0, 0, 0);
+        background-color: rgb(58, 58, 58);
+        height: 0.35rem;
+        border-radius: 5rem;
+        // width: 3.8rem;
+        margin: 0.5rem 0;
+        padding: .1rem;
+        height: 0.4rem;
+        width: 3.5rem;
+        display: block;
+        transition: all .2s ease-in;
+
+        &:nth-child(2){
+            width: 3rem;
+            // width: 2.5rem;
+        margin-left: .5rem;
+        // background-color: red;
+
+        }
+
+    }
+}
+
+
+.main{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+        
+    // THE DIV WITH THE ICONS ON THE LEFT SIDE OF THE PAGE 
+    .social-links{
+        // z-index: 4444;
+        // border: 1px solid lightblue;
+        position: fixed;
+        height: 100%;
+        bottom: 2%;
+        left: 3%;
+        bottom: 0;
+        // height: 33rem;
+        // width: 11rem;
+
+        .social-links-container{
+            // z-index: 4444;
+            height: 100%;
+            display: flex;
+            // border: 2px solid red;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            align-items: center;
+            
+            a{
+                color: black;
+                i{
+                    color: rgb(0, 0, 0);
+                    font-size: 1.8rem;
+                    margin: 1rem 0;
+                    opacity: .6;
+                }
+            }
+
+            //THE LINE ON THE LEFT SIDE OF THE PAGE
+            .line{
+                height: 11rem;
+                width: .1rem;
+                background-color: lightgrey;
+                background-color: #44544d;
+            }
+        }
+
+
+
+    }
+
+
+    // THE DIV ON THE RIGHT PAGE USED FOR NAVIGATING TO DIFF SECTIONS
+    .navigate-div{
+        position: fixed;
+        z-index: 4444;
+        right: 5%;
+        bottom: 0;
+        height: 100vh;
+        // border: 2px solid white;
+        .navigate-buttons{
+            // border: 1px solid red;
+            height: 100%;
+            display: flex;
+            // border: 2px solid red;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            align-items: center;
+            .nav-buttons-div{
+                height: .7rem;
+                width: .7rem;
+                background-color: rgb(0, 0, 0);
+                // background-color: $web-color2;
+                border-radius: 50%;
+                margin: 1rem 0;
+                opacity: .6;
+            }
+            //THE LINE ON THE LEFT SIDE OF THE PAGE
+            .right-line{
+                height: 11rem;
+                width: .1rem;
+                background-color: lightgrey;
+                background-color: #44544d;
+            }
+        }
+    }
+
+ 
+}
+
+
+//HEADER
+.page-header{
+    // background-color: rgb(7, 6, 65);
+    // border: 1px solid;
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+
+    top: 0;
+    left: 0;
+
+    .page-header-container{
+        // border: 2px solid red;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .nav-bar{
+            width: 87%;
+            height: 100%;
+            // border: 2px solid blue;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            //LOGO
+            .logo{
+                position: absolute;
+                left: 3%;
+                top: 18%;
+                z-index: 444;
+
+                .logo-image-container{
+
+                    h1{
+                        font-weight: $black;
+                        font-size: 3rem;
+                        text-transform: uppercase;
+                        // color: blue;   
+                        color: black;
+                        opacity: .7;
+
+                        
+                    }
+                }
+   
+            }
+            //MENU LINKS
+            .page-header-links{
+                display: flex;
+                align-items: center;
+                // border: 2px soild green;
+                // clip-path: circle(70.7% at 50% 50%);
+                ul li{
+
+                    list-style: none;
+                    display: inline-block;
+                    // list-style: lower-roman;
+                    // color: rgb(255, 255, 255);
+                    a{
+                        font-size: 1.4rem;
+                        color: black;
+                        
+                        opacity: .7;
+                        font-weight: $bold;
+                        text-decoration: none;
+                        padding: 0 1rem;
+                        text-transform: lowercase;
+                    }
+
+
+
+                }
+
+                //THE LINE AFTER THE LINKS IN THE HEADER SECTION
+                #line{
+                    height: .1rem;
+                    width: 11rem;
+                    // margin-top: -.5rem;
+                    color:rgba(239, 237, 237,.5) ;
+                    background-color:  rgba(239, 237, 237,.5);
+                    background-color: #44544d;
+                }
+
+
+            }
+        }
+    }
+}
+
+
+.top-page-section{
+
+    z-index: -2;  //bcz it it pinned and i want the coming section to be on top of it
+    height: 100vh;
+    // border: 4px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    //DIV WITH THE TOP SECTION CONTENT
+    .top-page-content{
+        // border: 2px solid red;
+        height: 50%;
+        width: 100%;
+        width: 90%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // align-items: flex-start;
+
+        
+        .top-page-content-container{
+            // border: 2px solid blue;
+            width: 95%;
+            width: 80%;
+            padding: .5rem;
+            // padding: 4rem 0;
+            .greeting{
+                h1{
+                    font-size: 1.3rem;
+                    // opacity: .5;
+                    font-weight: $medium;
+                    font-weight: $bold;
+                    letter-spacing: .1rem;
+                    color: black;
+                    opacity: .9;
+                    // border: 1px solid;
+                    padding: 0 0 0 1rem;
+                }
+            }
+
+            //NAME
+            .name{
+                h1{
+                    font-weight: $black;
+                    font-size: 6.7rem;
+                    text-transform: capitalize;
+                    color: black;
+                    opacity: .8;
+                }
+            }
+
+            //PROFESSTION
+            .profession{
+
+                h1{
+                    font-size: 5.3rem;
+                    opacity: .7;
+                    font-weight: $bold;
+                    font-weight: $black;
+                    color: black;
+                    // font-weight: $medium;
+                }
+            }
+
+            //INFO
+            .info{
+                p{
+                    font-size: 1.8rem;
+                    font-weight: $bold;
+                    padding: 1rem 0;
+                    font-weight: $medium;
+                    opacity: .9;
+                    color: black;
+                }
+
+            }
+        }
+    }
+
+
+
+
+
+}
+
+// ABOUT ME SECTION
+.about-me-section{
+
+    background-color: $about-and-contact-color;
+    // background-color: white;
+    z-index: 3843;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 0;
+    // border: 4px solid red;
+    .about-me-section-header-and-info{
+        // border: 2px solid red;
+
+        // border: 2px solid orange;
+        width: 66%;
+        height: 100%;
+        //THE TITLE
+        .about-me-header{
+            // border: 1px solid white;
+            display: flex;
+            align-items: center;
+            padding:0 1rem;
+            justify-content: center;
+            justify-content: flex-start;
+       
+            .about-me-title{
+                font-weight: $medium;
+                font-size: 2.3rem;
+                font-weight: $black;
+                color: white;
+                opacity: .8;
+                text-transform: capitalize;
+
+            }
+            //THE LINES BEFORE AND AFTER THE ABOUT HEADER
+            .about-section-line{
+                height: .1rem;
+                width: 30%;
+                background-color: rgb(15, 15, 221);
+                // background-color: #AADCEC;
+                margin: 0 1.2rem;
+            }
+
+        }
+
+        //THE DIV WITH ABOUT ME TEXT AND IMAGE
+        .about-me-flex-container{
+            // border: 2px solid green;
+            display: flex;
+            // height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            .about-me-container{
+
+                // border: 1px solid lightblue;
+                // padding: 2rem 0;
+                width: 100%;
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .about-me-info{
+                    // border: 2px solid white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .about-me-info-paragraph{
+                        padding: 1rem;
+                        p{
+                            // letter-spacing: .1rem;
+                            padding: 1rem 0;
+                            color: white;
+                            font-size: 1.7rem;
+                            opacity: .9;
+                            font-weight: $regular;
+
+                            line-height: 2.3rem;
+                            line-height: 132%;
+                            // font-weight: $medium;
+                            // font-weight: $light;
+
+                            &:nth-child(3){
+                                margin-bottom: 3rem;
+                            }
+                        }
+
+                        a{
+                            font-weight: $medium;
+                            font-size: 1.3rem;
+                            word-spacing: .5rem;
+                            letter-spacing: .1rem;
+                            width: 19rem;
+                            background-color: transparent;
+                            text-transform: uppercase;
+                            position: relative;
+                            color: white;
+                            padding: 1rem 5rem;
+                            border-radius: .2rem;
+                            text-decoration: none;
+                            margin-top: 2rem;
+                            border: 1px solid whitesmoke;
+                        }
+
+                    }
+    
+                }
+        
+                .about-me-image{
+                    // border: 2px solid blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .image-container{
+                        height: 25rem;
+                        width:25rem;
+                        border: 1px solid rgb(196, 190, 190);
+                        // background-color: red;
+                        .image{
+                            margin-top: -2rem;
+                            margin-left: -2rem;
+                            height: 25rem;
+                            width:25rem;
+                            background-color: rgb(0, 0, 0);
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+}
+
+//PROJECTS SECTION
+.projects-section{
+    // border: 1px solid;
+    height: 100vh,auto;
+    background-color: rgb(7, 6, 65);
+    // background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 8rem 0;
+
+
+    .projects-section-container{
+        // border: 1px solid blue ;
+        height: 100%;
+        width: 80%;
+
+        .projects-section-header{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem;
+            //PROJECTS TITLE
+            .projects-title{
+                font-weight: $medium;
+                font-weight: $black;
+                opacity: .9;
+                font-size: 2.3rem;
+                
+                text-transform: capitalize;
+            }
+
+            //THE LINE NEXT TO THER PROJECTS TITLE
+            .projects-section-line{
+                height: .004rem;
+                width: 30%;
+                background-color:  rgba(6, 11, 132, 0.5);
+                // background-color: #AADCEC;
+                margin: 0 1.2rem;
+            }
+
+
+
+        }
+
+        .projects-section-details{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            // border: 2px solid;
+            .project-info{
+                margin: 1rem;
+                border-radius: .2rem;
+                padding:  6.5rem 3rem;
+                padding-top: 1rem;
+                position: relative;
+                background-color: transparent;
+                background-color: rgb(5, 5, 75);
+                // border: .03rem solid rgb(3, 27, 106);
+
+                //THE DIV WITH THE ICONS    
+                .project-section-icons-container{
+
+                    // border: 1px solid;
+                    padding: 1rem .5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 2rem;
+
+                    a{
+
+
+                        i{
+                            color: white;
+                            opacity: .7;
+                            font-size: 1.8rem;
+
+
+                        }
+                    }
+
+                    //GIVING PADDING RIGHT TO THE COODE ICON
+
+                    .code{
+                        padding-right: 1.8rem;
+                    }
+
+
+                }
+              
+                h1{
+                    font-size: 1.8em;
+                    opacity: .7;
+                    padding-bottom: 1rem;
+                    font-weight:$medium;
+                    text-transform: capitalize;
+                    font-weight: bold;
+
+                }
+
+                p{
+                    font-weight: $regular;
+                    font-size: 1.6rem;
+                    padding: 1rem 0;
+                    padding-bottom: 2rem;
+                    opacity: .7;
+                    letter-spacing: .02rem;
+                    padding-bottom: 2rem;
+                }
+
+                //the div with the tech used 
+                .tech-used-container{
+                    // border: 1px solid;
+                    position: absolute;
+                    bottom: 5%;
+                    margin-bottom: .5rem;
+
+
+                    .tech-used{
+                        padding-right:.8rem;
+                        font-size: 1.2rem;
+                        opacity: .6;
+                        font-weight: $light;
+    
+                        
+                    }
+                }
+
+            }
+        }
+    }
+
+
+}
+
+
+//SEND ME A MESSAGE SECTION
+
+.send-message-section{
+    background-color:$body-color;
+    height: 100vh;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .send-message-container{
+        // border: 1px solid;
+        width: 50%;
+        // width: 44%;
+        h1{
+            font-size: 3.5rem;
+            padding: 1rem 0;
+            text-align: center;
+            color: black;
+
+        }
+
+        p{
+            font-weight: $medium;
+            font-size: 2rem;
+            text-align: center;
+            padding-bottom: 1rem;
+            color: black;
+        }
+
+        .send-message-container-details{
+
+            #form{
+                // border: 3px solid red;
+                // position: relative;
+                .name-email-container{
+                    display: flex;
+                    // border: 2px solid;
+                    margin-top: 3rem; 
+                    justify-content: space-between;
+                }
+
+                label{
+                    color: black;
+                    font-weight: $regular;
+                    // font-weight: $light;
+                    font-size: 1.5rem;
+                }
+
+                //STYLING THE INPUT AND TEXTAREA
+                textarea,input{
+                    border: none;
+                    background-color: transparent;
+                    font-weight: $bold;
+                    font-size: 1.6rem;
+                    color: black;
+                    font-family: $web-font1,$web-font2;
+                    padding: 1rem ;
+                    border-bottom: 1px solid #000;
+                    text-transform: none;
+                    //STYLING THE PLACEHOLDER
+                    &::placeholder{
+                        color: black;
+                        opacity: .9;
+                        font-size: 1.2rem;
+                        font-weight: $regular;
+                        text-transform: uppercase;
+                    }
+
+                    &:focus{
+                        outline: none;
+                        transform: translateY(-.5rem);
+                        border-bottom: 2px solid $body-color;
+                    }
+                }
+                input{
+                    width:45%;
+                }
+                textarea{
+                    width: 100%;
+                }
+
+
+                .button-container{
+                    // border: 2px solid red;
+                    margin-top: 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                button{
+                    // margin-top: 3rem;
+                    text-align: center;
+                    color: black;
+                    font-weight: $medium;
+                    font-size: 1.4rem;
+                    padding: .8rem 2rem;
+                    width: 19rem;
+                    background-color: transparent;
+                    border: 1px solid black;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 22;
+                    // color: white;
+
+                    #animatingSubmitButton{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+
+                        height: 100%;
+                        width: 100%;
+
+                        // z-index: 21;
+                        background-color: black;
+                        z-index: -1;
+                        clip-path: inset(0 100% 0 0);
+                        // transition: all .1s ease-in-out;
+
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+
+
+//CONTACT SECTION
+.contact-section{
+    background-color: $about-and-contact-color;
+    height: 100vh;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    .contact-section-container{
+        // border: 3px solid red;
+        height: 80%;
+        width: 70%;
+        display: grid;
+        grid-template-columns: 1fr;
+        .contact-me{
+            // border: 1px solid lightblue;
+            padding: 2rem;
+            h1{
+                font-weight: $regular;
+                font-size: 5rem;
+                opacity: .9;
+            }
+
+            a{
+                font-size: 4rem;
+                font-weight: $regular;
+                text-decoration: none;
+                position: relative;
+                color:white;
+                
+                ;
+                &::after{
+                    content: '';
+                    display: block;
+                    height: .1rem;
+                    position: absolute;
+                    left: 0;
+                    background-color: lightgrey;
+                    bottom: -5%;
+                    right: 0;
+
+                }
+            }
+        }
+
+        .contact-section-email-and-links{
+            // border: 2px solid blue;
+            padding: 2rem;
+ 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .contact-section-email{
+                // border: 1px solid green;
+              
+                //THE EMAIL ADDRESS
+                a{
+                    font-size: 2rem;
+                    font-weight: $medium;
+                    text-decoration: none;
+                    position: relative;
+                    color:white;
+                    &::after{
+                        content: '';
+                        display: block;
+                        height: .1rem;
+                        position: absolute;
+                        background-color: lightgrey;
+                        left: 0;
+                        bottom: -2%;
+                        right: 0;
+    
+                    }
+
+                }
+            }
+
+            .contact-section-links{
+                // border: 1px solid white;
+                height: 50%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                a{
+                    font-weight: $regular;
+                    font-size: 1.8rem;
+                    text-decoration: none;
+                    color:white;
+                }
+            }
+        }
+    }
+
+    //THE ANCHOR TAG AT THE BOTTOM OF THE PAGE
+    .developed-by-me{
+        color: white;
+        opacity: .8;
+        text-decoration: none;
+        font-family: $web-font1,$web-font2;
+        font-weight: $regular;
+        font-size: 1.3rem;
+        // border: 2px solid white;
+        transform: translateX(-50%);
+        position: absolute;
+        bottom: 4%;
+        left: 50%;
+    }
+}
+
+
+//MEDIA QUERIES FOR LARGER SCREENS
+
+@media screen and(min-width:1500px) {
+    //top section
+    .top-page-section{
+        .top-page-content{
+            width: 100%;
+
+            .top-page-content-container{
+                width: 60%;
+            }
+        }
+    }
+
+    //ABOUT ME SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 60%;
+        }
+
+    }
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width:65% ;
+        }
+    }
+
+
+
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            width: 60%;
+        }
+    }
+}
+
+@media screen and(min-width:1700px) {
+
+
+
+    .top-page-section{
+        .top-page-content{
+            .top-page-content-container{
+                width: 54%;
+            }
+        }
+    }
+    //ABOUT ME SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 50%;
+        }
+
+    }
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width:60% ;
+        }
+    }
+
+    //SEND MESSAGE NSECTION
+    .send-message-section{
+        .send-message-container{
+            width: 40%;
+        }
+    }
+
+        
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            width: 50%;
+        }
+    }
+}
+
+@media screen and(min-width:1900px) {
+
+    //PAGE HEADER
+    // .page-header{
+    //     .page-header-container{
+    //         .nav-bar{
+    //             width: 43%;
+    //         }
+    //     }
+    // }
+
+
+    //ABOUT ME SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 45%;
+        }
+
+    }
+
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width:53% ;
+        }
+    }
+
+    //SEND MESSAGE NSECTION
+    .send-message-section{
+        .send-message-container{
+            width: 40%;
+        }
+    }
+
+        
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            width: 45%;
+        }
+    }
+}
+
+//NEDIA QUERIES FOR SMALLER SCREENS
+
+
+@media screen and(max-width:1228px) {
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width: 90%;
+        }
+    }
+}
+
+@media screen and(max-width:1137px) {
+    //about section
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 75%;
+        }
+    }
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width: 80%;
+
+
+            .projects-section-details{
+
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+}
+
+@media screen and(max-width:1000px) {
+    //TOP SECTION
+    .top-page-section{
+        .top-page-content{
+            // width: 100%;
+            .top-page-content-container{
+                width: 94%;
+
+                .name{
+
+                    h1{
+                        font-size: 6.3rem;
+                    }
+
+                }
+                .profession{
+                    h1{
+                        font-size: 5rem;
+                    }
+                }
+
+            }
+        }
+    }
+
+    //ABOUT SECTION
+
+    //ABOUT ME SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 85%;
+
+            .about-me-flex-container{
+                .about-me-container{
+    
+                    .about-me-info{
+                        .about-me-info-paragraph{
+                            p{
+                                font-size: 1.6rem;
+                            }
+                        }
+       
+                    }
+                }
+            }
+        }
+
+    }
+
+    //SEND MESSAGE SECTION
+    .send-message-section{
+        .send-message-container{
+            width: 70%;
+        }
+    }
+
+
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            width: 85%;
+
+            .contact-me{
+                h1{
+                    font-size:4.7rem ;
+                }
+
+                a{
+                    font-size: 3.6rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:850px) {
+
+    //hiding the social links and the div on the right side of the page
+    .main{
+        .social-links{
+            display: none;
+        }
+
+        .navigate-div{
+            .navigate-buttons{
+                display: none;
+            }
+        }
+    }
+    .top-page-section{
+        .top-page-content{
+            width: 100%;
+            .top-page-content-container{
+                width: 85%;
+                .greeting{
+                    h1{
+                        padding: unset;
+                        padding-left: 0.5rem;
+                    }
+                }
+                .name{
+
+                    h1{
+                        font-size: 5.4rem;
+                    }
+
+                }
+                .profession{
+                    h1{
+                        font-size: 4.8rem;
+                    }
+                }
+
+                .info{
+                    p{
+                        //this will remove the line break from the p tag
+                        br{content:' ';}
+                        br:after{content:' ';}
+                    }
+                }
+
+            }
+        }
+    }
+
+       //ABOUT ME SECTION
+       .about-me-section{
+        height: auto;
+        .about-me-section-header-and-info{
+            width: 60%;
+
+            .about-me-flex-container{
+                .about-me-container{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+    
+                    .about-me-info{
+                        .about-me-info-paragraph{
+                            p{
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                    .about-me-image{
+                        margin-top: 8rem;
+                        margin-left: 2rem;
+                        
+                    }
+    
+                }
+            }
+        }
+
+    }
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width: 90%;
+
+
+            .projects-section-details{
+
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+
+
+
+
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            width: 83%;
+            .contact-me{
+                h1{
+                    font-size:4.5rem ;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:750px) {
+
+
+
+    //top section
+    .top-page-section{
+
+
+
+        //HIDING THE DIV WITH THE ICONS ON THE LEFT
+
+        .top-page-content{
+            .top-page-content-container{
+               width: 84%; 
+                .name{
+
+                    h1{
+                        font-size: 4.8rem;
+                    }
+
+                }
+                .profession{
+                    h1{
+                        font-size: 4.3rem;
+                    }
+                }
+
+                .info{
+                    p{
+                        font-size: 1.7rem;
+                    }
+                }
+
+
+
+            }
+        }
+
+        .navigate-div{
+            display: none;
+        }
+
+    }
+
+    //ABOUT SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 70%;
+        }
+    }
+
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width: 95%;
+
+
+            .projects-section-details{
+
+                grid-template-columns: 1fr 1fr;
+
+
+                .project-info{
+
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+
+            }
+        }
+    }
+    
+    //SEND MESSAGE SECTION
+    .send-message-section{
+        .send-message-container{
+            width: 90%;
+        }
+    }
+
+
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            width: 83%;
+            .contact-me{
+                h1{
+                    font-size:4rem ;
+                }
+
+                a{
+                    font-size: 3rem;
+                }
+            }
+
+            .contact-section-email-and-links{
+                .contact-section-email{
+                    a{
+                        font-size: 1.8rem;
+                    }
+                }
+
+                .contact-section-links{
+                    a{
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
+
+@media screen and(max-width:630px) {
+    //showing the button
+    .hamburger-button{
+        display: block;
+    }
+
+    //PAGE HEADER
+    .page-header{
+        .page-header-container{
+            // border: 1px solid;
+
+            .nav-bar{
+
+                .page-header-links{
+                    position: fixed;
+                    top: 0;
+                    right: -100vw;
+                    height: 100vh;
+                    width: 100vw;
+                    z-index: 222;
+                    background-color: rgb(0, 0, 0);
+
+                    transition: all .4s ease-in-out;
+                    ul{
+                        width: 100%;
+
+                        height: 60%;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+
+                        li a{
+                            font-size: 1.8rem;
+                            opacity: 1;
+                            color: rgb(255, 255, 255);
+                        }
+                    }
+
+                    //HIDING THE LINE ON THE RIGHT SIDE OF THE LINKS
+                    #line{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    //ABOUT SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 80%;
+        }
+    }
+
+    
+    .top-page-section{
+        .top-page-content{
+            // width: 90%;
+            .top-page-content-container{
+                padding: 2rem;
+
+                .greeting{
+                    h1{
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .name{
+
+                    h1{
+                        font-size: 4.2rem;
+                    }
+
+                }
+                .profession{
+                    h1{
+                        font-size: 3.7rem;
+                    }
+                }
+
+                .info{
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width: 80%;
+
+
+            .projects-section-details{
+
+                grid-template-columns: 1fr;
+
+
+            }
+        }
+    }
+
+    //send message section
+    .send-message-section{
+        .send-message-container{
+            width: 70%;
+            .send-message-container-details{
+
+                #form{
+                    .name-email-container{
+                        flex-direction: column;
+                    }
+
+                    input{
+                        width: 100%;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            .contact-me{
+                h1{
+                    font-size:3.4rem ;
+                }
+
+                a{
+                    font-size: 2.8rem;
+                }
+            }
+
+            .contact-section-email-and-links{
+                display: flex;
+                flex-direction: column;
+
+                .contact-section-links{
+                    margin-top: 4rem;
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:574px) {
+    .top-page-section{
+        .top-page-content{
+            .top-page-content-container{
+                padding: unset;
+                .name{
+
+                    h1{
+                        font-size: 3.8rem;
+                    }
+
+                }
+                .profession{
+                    h1{
+                        font-size: 3.4rem;
+                    }
+                }
+
+                .info{
+                    p{
+                        font-size: 1.4rem;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    //ABOUT SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 80%;
+        }
+    }
+
+        
+    //PROJECTS SECTION
+    .projects-section{
+        .projects-section-container{
+            width: 90%;
+
+
+            .projects-section-details{
+
+                grid-template-columns: 1fr;
+
+
+            }
+        }
+    }
+
+    //SEND MESSAGE SECTION
+    .send-message-section{
+        .send-message-container{
+            width: 80%;
+
+            .send-message-container-details{
+                #form{
+                    input,textarea{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+
+            h1{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            width: 83%;
+            .contact-me{
+                h1{
+                    font-size:3rem ;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and(max-width:478px) {
+    .top-page-section{
+        .top-page-content{
+            width: 100%;
+            .top-page-content-container{
+                .name{
+
+                    h1{
+                        font-size: 3.4rem;
+                    }
+
+                }
+                .profession{
+                    h1{
+                        font-size: 2.8rem;
+                    }
+                }
+
+                .info{
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    //ABOUT SECTION
+    .about-me-section{
+        .about-me-section-header-and-info{
+            width: 85%;
+        }
+    }
+
+    //CONTACT ME SECTION
+    .contact-section{
+        .contact-section-container{
+            .contact-me{
+                h1{
+                    font-size:2.8rem ;
+                }
+
+                a{
+                    font-size: 2.5rem;
+                }
+            }
+
+            .contact-section-email-and-links{
+                display: flex;
+                flex-direction: column;
+
+                .contact-section-links{
+                    margin-top: 4rem;
+
+                    
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:430px) {
+    .top-page-section{
+        .top-page-content{
+            .top-page-content-container{
+                width: 90%;
+                .name{
+
+                    h1{
+                        font-size: 3.2rem;
+                    }
+
+                }
+                .profession{
+                    h1{
+                        font-size: 2.6rem;
+                    }
+                }
+
+                .info{
+                    p{
+                        font-size: 1.4rem;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+}
+
+
+// CLASSES TO BE TOGGLED ARE HERE
+
+///TOGGLE THIS CLASS TO THE HAMBURGER WHEN CLICKED
+//
+.hamburger-button.hamburgerclicked{
+    position:fixed;
+    
+    span{
+        background-color: rgb(255, 255, 255);
+        &:nth-child(1){
+            width: 3.6rem;
+            // transform: translateY(.5rem) rotate(45deg);
+            transform: translateY(1rem) rotate(45deg);
+            // background-color: red;
+        }
+        &:nth-child(2){
+            opacity: 0;
+        }
+        &:nth-child(3){
+            // transform: translateY(-.3rem) rotate(-45deg);
+            transform: translateY(-.8rem) rotate(-45deg);
+        }
+    }
+}
+
+body.hideOverflow{  //disabling scrolling when the h. button is clicked
+    overflow: hidden;
+}
+
+//TOGGLE THIS CLASS TO SHOW THE MENU LINKS
+.page-header .page-header-container .nav-bar .page-header-links.show-links{
+    right: 0;
+
+
+}
+

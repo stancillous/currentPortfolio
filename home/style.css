@@ -1,0 +1,1006 @@
+@import url("../cursor/cursor.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Satoshi", sans-serif, "General Sans", sans-serif;
+  display: flex;
+  background-color: rgb(223, 236, 237);
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 0.9rem;
+  height: 1rem;
+}
+body::-webkit-scrollbar-track {
+  background: #090f1d;
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #25276a;
+  border-radius: 5rem;
+}
+
+.hamburger-button {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+  display: none;
+  z-index: 444;
+}
+.hamburger-button span {
+  background-color: rgb(0, 0, 0);
+  background-color: rgb(58, 58, 58);
+  height: 0.35rem;
+  border-radius: 5rem;
+  margin: 0.5rem 0;
+  padding: 0.1rem;
+  height: 0.4rem;
+  width: 3.5rem;
+  display: block;
+  transition: all 0.2s ease-in;
+}
+.hamburger-button span:nth-child(2) {
+  width: 3rem;
+  margin-left: 0.5rem;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: relative;
+}
+.main .social-links {
+  position: fixed;
+  height: 100%;
+  bottom: 2%;
+  left: 3%;
+  bottom: 0;
+}
+.main .social-links .social-links-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-items: center;
+}
+.main .social-links .social-links-container a {
+  color: black;
+}
+.main .social-links .social-links-container a i {
+  color: rgb(0, 0, 0);
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  opacity: 0.6;
+}
+.main .social-links .social-links-container .line {
+  height: 11rem;
+  width: 0.1rem;
+  background-color: lightgrey;
+  background-color: #44544d;
+}
+.main .navigate-div {
+  position: fixed;
+  z-index: 4444;
+  right: 5%;
+  bottom: 0;
+  height: 100vh;
+}
+.main .navigate-div .navigate-buttons {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-items: center;
+}
+.main .navigate-div .navigate-buttons .nav-buttons-div {
+  height: 0.7rem;
+  width: 0.7rem;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  margin: 1rem 0;
+  opacity: 0.6;
+}
+.main .navigate-div .navigate-buttons .right-line {
+  height: 11rem;
+  width: 0.1rem;
+  background-color: lightgrey;
+  background-color: #44544d;
+}
+
+.page-header {
+  position: absolute;
+  width: 100%;
+  height: 15vh;
+  top: 0;
+  left: 0;
+}
+.page-header .page-header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.page-header .page-header-container .nav-bar {
+  width: 87%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.page-header .page-header-container .nav-bar .logo {
+  position: absolute;
+  left: 3%;
+  top: 18%;
+  z-index: 444;
+}
+.page-header .page-header-container .nav-bar .logo .logo-image-container h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: black;
+  opacity: 0.7;
+}
+.page-header .page-header-container .nav-bar .page-header-links {
+  display: flex;
+  align-items: center;
+}
+.page-header .page-header-container .nav-bar .page-header-links ul li {
+  list-style: none;
+  display: inline-block;
+}
+.page-header .page-header-container .nav-bar .page-header-links ul li a {
+  font-size: 1.4rem;
+  color: black;
+  opacity: 0.7;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0 1rem;
+  text-transform: lowercase;
+}
+.page-header .page-header-container .nav-bar .page-header-links #line {
+  height: 0.1rem;
+  width: 11rem;
+  color: rgba(239, 237, 237, 0.5);
+  background-color: rgba(239, 237, 237, 0.5);
+  background-color: #44544d;
+}
+
+.top-page-section {
+  z-index: -2;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-page-section .top-page-content {
+  height: 50%;
+  width: 100%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-page-section .top-page-content .top-page-content-container {
+  width: 95%;
+  width: 80%;
+  padding: 0.5rem;
+}
+.top-page-section .top-page-content .top-page-content-container .greeting h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: black;
+  opacity: 0.9;
+  padding: 0 0 0 1rem;
+}
+.top-page-section .top-page-content .top-page-content-container .name h1 {
+  font-weight: 900;
+  font-size: 6.7rem;
+  text-transform: capitalize;
+  color: black;
+  opacity: 0.8;
+}
+.top-page-section .top-page-content .top-page-content-container .profession h1 {
+  font-size: 5.3rem;
+  opacity: 0.7;
+  font-weight: 700;
+  font-weight: 900;
+  color: black;
+}
+.top-page-section .top-page-content .top-page-content-container .info p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 1rem 0;
+  font-weight: 500;
+  opacity: 0.9;
+  color: black;
+}
+
+.about-me-section {
+  background-color: #2007c2;
+  z-index: 3843;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0;
+}
+.about-me-section .about-me-section-header-and-info {
+  width: 66%;
+  height: 100%;
+}
+.about-me-section .about-me-section-header-and-info .about-me-header {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: center;
+  justify-content: flex-start;
+}
+.about-me-section .about-me-section-header-and-info .about-me-header .about-me-title {
+  font-weight: 500;
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: white;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+.about-me-section .about-me-section-header-and-info .about-me-header .about-section-line {
+  height: 0.1rem;
+  width: 30%;
+  background-color: rgb(15, 15, 221);
+  margin: 0 1.2rem;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-info .about-me-info-paragraph {
+  padding: 1rem;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-info .about-me-info-paragraph p {
+  padding: 1rem 0;
+  color: white;
+  font-size: 1.7rem;
+  opacity: 0.9;
+  font-weight: 400;
+  line-height: 2.3rem;
+  line-height: 132%;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-info .about-me-info-paragraph p:nth-child(3) {
+  margin-bottom: 3rem;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-info .about-me-info-paragraph a {
+  font-weight: 500;
+  font-size: 1.3rem;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.1rem;
+  width: 19rem;
+  background-color: transparent;
+  text-transform: uppercase;
+  position: relative;
+  color: white;
+  padding: 1rem 5rem;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  margin-top: 2rem;
+  border: 1px solid whitesmoke;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-image .image-container {
+  height: 25rem;
+  width: 25rem;
+  border: 1px solid rgb(196, 190, 190);
+}
+.about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-image .image-container .image {
+  margin-top: -2rem;
+  margin-left: -2rem;
+  height: 25rem;
+  width: 25rem;
+  background-color: rgb(0, 0, 0);
+}
+
+.projects-section {
+  height: 100vh, auto;
+  background-color: rgb(7, 6, 65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 8rem 0;
+}
+.projects-section .projects-section-container {
+  height: 100%;
+  width: 80%;
+}
+.projects-section .projects-section-container .projects-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+.projects-section .projects-section-container .projects-section-header .projects-title {
+  font-weight: 500;
+  font-weight: 900;
+  opacity: 0.9;
+  font-size: 2.3rem;
+  text-transform: capitalize;
+}
+.projects-section .projects-section-container .projects-section-header .projects-section-line {
+  height: 0.004rem;
+  width: 30%;
+  background-color: rgba(6, 11, 132, 0.5);
+  margin: 0 1.2rem;
+}
+.projects-section .projects-section-container .projects-section-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.projects-section .projects-section-container .projects-section-details .project-info {
+  margin: 1rem;
+  border-radius: 0.2rem;
+  padding: 6.5rem 3rem;
+  padding-top: 1rem;
+  position: relative;
+  background-color: transparent;
+  background-color: rgb(5, 5, 75);
+}
+.projects-section .projects-section-container .projects-section-details .project-info .project-section-icons-container {
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.projects-section .projects-section-container .projects-section-details .project-info .project-section-icons-container a i {
+  color: white;
+  opacity: 0.7;
+  font-size: 1.8rem;
+}
+.projects-section .projects-section-container .projects-section-details .project-info .project-section-icons-container .code {
+  padding-right: 1.8rem;
+}
+.projects-section .projects-section-container .projects-section-details .project-info h1 {
+  font-size: 1.8em;
+  opacity: 0.7;
+  padding-bottom: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.projects-section .projects-section-container .projects-section-details .project-info p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  padding-bottom: 2rem;
+  opacity: 0.7;
+  letter-spacing: 0.02rem;
+  padding-bottom: 2rem;
+}
+.projects-section .projects-section-container .projects-section-details .project-info .tech-used-container {
+  position: absolute;
+  bottom: 5%;
+  margin-bottom: 0.5rem;
+}
+.projects-section .projects-section-container .projects-section-details .project-info .tech-used-container .tech-used {
+  padding-right: 0.8rem;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+.send-message-section {
+  background-color: rgb(223, 236, 237);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.send-message-section .send-message-container {
+  width: 50%;
+}
+.send-message-section .send-message-container h1 {
+  font-size: 3.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: black;
+}
+.send-message-section .send-message-container p {
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: black;
+}
+.send-message-section .send-message-container .send-message-container-details #form .name-email-container {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+.send-message-section .send-message-container .send-message-container-details #form label {
+  color: black;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.send-message-section .send-message-container .send-message-container-details #form textarea, .send-message-section .send-message-container .send-message-container-details #form input {
+  border: none;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: black;
+  font-family: "Satoshi", sans-serif, "General Sans", sans-serif;
+  padding: 1rem;
+  border-bottom: 1px solid #000;
+  text-transform: none;
+}
+.send-message-section .send-message-container .send-message-container-details #form textarea::-moz-placeholder, .send-message-section .send-message-container .send-message-container-details #form input::-moz-placeholder {
+  color: black;
+  opacity: 0.9;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.send-message-section .send-message-container .send-message-container-details #form textarea:-ms-input-placeholder, .send-message-section .send-message-container .send-message-container-details #form input:-ms-input-placeholder {
+  color: black;
+  opacity: 0.9;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.send-message-section .send-message-container .send-message-container-details #form textarea::placeholder, .send-message-section .send-message-container .send-message-container-details #form input::placeholder {
+  color: black;
+  opacity: 0.9;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.send-message-section .send-message-container .send-message-container-details #form textarea:focus, .send-message-section .send-message-container .send-message-container-details #form input:focus {
+  outline: none;
+  transform: translateY(-0.5rem);
+  border-bottom: 2px solid rgb(223, 236, 237);
+}
+.send-message-section .send-message-container .send-message-container-details #form input {
+  width: 45%;
+}
+.send-message-section .send-message-container .send-message-container-details #form textarea {
+  width: 100%;
+}
+.send-message-section .send-message-container .send-message-container-details #form .button-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.send-message-section .send-message-container .send-message-container-details #form button {
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-size: 1.4rem;
+  padding: 0.8rem 2rem;
+  width: 19rem;
+  background-color: transparent;
+  border: 1px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  z-index: 22;
+}
+.send-message-section .send-message-container .send-message-container-details #form button #animatingSubmitButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: -1;
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0);
+}
+
+.contact-section {
+  background-color: #2007c2;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+.contact-section .contact-section-container {
+  height: 80%;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.contact-section .contact-section-container .contact-me {
+  padding: 2rem;
+}
+.contact-section .contact-section-container .contact-me h1 {
+  font-weight: 400;
+  font-size: 5rem;
+  opacity: 0.9;
+}
+.contact-section .contact-section-container .contact-me a {
+  font-size: 4rem;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+.contact-section .contact-section-container .contact-me a::after {
+  content: "";
+  display: block;
+  height: 0.1rem;
+  position: absolute;
+  left: 0;
+  background-color: lightgrey;
+  bottom: -5%;
+  right: 0;
+}
+.contact-section .contact-section-container .contact-section-email-and-links {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-section .contact-section-container .contact-section-email-and-links .contact-section-email a {
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+.contact-section .contact-section-container .contact-section-email-and-links .contact-section-email a::after {
+  content: "";
+  display: block;
+  height: 0.1rem;
+  position: absolute;
+  background-color: lightgrey;
+  left: 0;
+  bottom: -2%;
+  right: 0;
+}
+.contact-section .contact-section-container .contact-section-email-and-links .contact-section-links {
+  height: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-section .contact-section-container .contact-section-email-and-links .contact-section-links a {
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: white;
+}
+.contact-section .developed-by-me {
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+  font-family: "Satoshi", sans-serif, "General Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+}
+
+@media screen and (min-width: 1500px) {
+  .top-page-section .top-page-content {
+    width: 100%;
+  }
+  .top-page-section .top-page-content .top-page-content-container {
+    width: 60%;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 60%;
+  }
+  .projects-section .projects-section-container {
+    width: 65%;
+  }
+  .contact-section .contact-section-container {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .top-page-section .top-page-content .top-page-content-container {
+    width: 54%;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 50%;
+  }
+  .projects-section .projects-section-container {
+    width: 60%;
+  }
+  .send-message-section .send-message-container {
+    width: 40%;
+  }
+  .contact-section .contact-section-container {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .about-me-section .about-me-section-header-and-info {
+    width: 45%;
+  }
+  .projects-section .projects-section-container {
+    width: 53%;
+  }
+  .send-message-section .send-message-container {
+    width: 40%;
+  }
+  .contact-section .contact-section-container {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1228px) {
+  .projects-section .projects-section-container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1137px) {
+  .about-me-section .about-me-section-header-and-info {
+    width: 75%;
+  }
+  .projects-section .projects-section-container {
+    width: 80%;
+  }
+  .projects-section .projects-section-container .projects-section-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .top-page-section .top-page-content .top-page-content-container {
+    width: 94%;
+  }
+  .top-page-section .top-page-content .top-page-content-container .name h1 {
+    font-size: 6.3rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .profession h1 {
+    font-size: 5rem;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 85%;
+  }
+  .about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-info .about-me-info-paragraph p {
+    font-size: 1.6rem;
+  }
+  .send-message-section .send-message-container {
+    width: 70%;
+  }
+  .contact-section .contact-section-container {
+    width: 85%;
+  }
+  .contact-section .contact-section-container .contact-me h1 {
+    font-size: 4.7rem;
+  }
+  .contact-section .contact-section-container .contact-me a {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .main .social-links {
+    display: none;
+  }
+  .main .navigate-div .navigate-buttons {
+    display: none;
+  }
+  .top-page-section .top-page-content {
+    width: 100%;
+  }
+  .top-page-section .top-page-content .top-page-content-container {
+    width: 85%;
+  }
+  .top-page-section .top-page-content .top-page-content-container .greeting h1 {
+    padding: unset;
+    padding-left: 0.5rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .name h1 {
+    font-size: 5.4rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .profession h1 {
+    font-size: 4.8rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .info p br {
+    content: " ";
+  }
+  .top-page-section .top-page-content .top-page-content-container .info p br:after {
+    content: " ";
+  }
+  .about-me-section {
+    height: auto;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 60%;
+  }
+  .about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-info .about-me-info-paragraph p {
+    font-size: 1.6rem;
+  }
+  .about-me-section .about-me-section-header-and-info .about-me-flex-container .about-me-container .about-me-image {
+    margin-top: 8rem;
+    margin-left: 2rem;
+  }
+  .projects-section .projects-section-container {
+    width: 90%;
+  }
+  .projects-section .projects-section-container .projects-section-details {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-section .contact-section-container {
+    width: 83%;
+  }
+  .contact-section .contact-section-container .contact-me h1 {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .top-page-section .top-page-content .top-page-content-container {
+    width: 84%;
+  }
+  .top-page-section .top-page-content .top-page-content-container .name h1 {
+    font-size: 4.8rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .profession h1 {
+    font-size: 4.3rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .info p {
+    font-size: 1.7rem;
+  }
+  .top-page-section .navigate-div {
+    display: none;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 70%;
+  }
+  .projects-section .projects-section-container {
+    width: 95%;
+  }
+  .projects-section .projects-section-container .projects-section-details {
+    grid-template-columns: 1fr 1fr;
+  }
+  .projects-section .projects-section-container .projects-section-details .project-info p {
+    font-size: 1.5rem;
+  }
+  .send-message-section .send-message-container {
+    width: 90%;
+  }
+  .contact-section .contact-section-container {
+    width: 83%;
+  }
+  .contact-section .contact-section-container .contact-me h1 {
+    font-size: 4rem;
+  }
+  .contact-section .contact-section-container .contact-me a {
+    font-size: 3rem;
+  }
+  .contact-section .contact-section-container .contact-section-email-and-links .contact-section-email a {
+    font-size: 1.8rem;
+  }
+  .contact-section .contact-section-container .contact-section-email-and-links .contact-section-links a {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 630px) {
+  .hamburger-button {
+    display: block;
+  }
+  .page-header .page-header-container .nav-bar .page-header-links {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    height: 100vh;
+    width: 100vw;
+    z-index: 222;
+    background-color: rgb(0, 0, 0);
+    transition: all 0.4s ease-in-out;
+  }
+  .page-header .page-header-container .nav-bar .page-header-links ul {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .page-header .page-header-container .nav-bar .page-header-links ul li a {
+    font-size: 1.8rem;
+    opacity: 1;
+    color: rgb(255, 255, 255);
+  }
+  .page-header .page-header-container .nav-bar .page-header-links #line {
+    display: none;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 80%;
+  }
+  .top-page-section .top-page-content .top-page-content-container {
+    padding: 2rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .greeting h1 {
+    font-size: 1.3rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .name h1 {
+    font-size: 4.2rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .profession h1 {
+    font-size: 3.7rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .info p {
+    font-size: 1.5rem;
+  }
+  .projects-section .projects-section-container {
+    width: 80%;
+  }
+  .projects-section .projects-section-container .projects-section-details {
+    grid-template-columns: 1fr;
+  }
+  .send-message-section .send-message-container {
+    width: 70%;
+  }
+  .send-message-section .send-message-container .send-message-container-details #form .name-email-container {
+    flex-direction: column;
+  }
+  .send-message-section .send-message-container .send-message-container-details #form input {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .contact-section .contact-section-container .contact-me h1 {
+    font-size: 3.4rem;
+  }
+  .contact-section .contact-section-container .contact-me a {
+    font-size: 2.8rem;
+  }
+  .contact-section .contact-section-container .contact-section-email-and-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-section .contact-section-container .contact-section-email-and-links .contact-section-links {
+    margin-top: 4rem;
+  }
+}
+@media screen and (max-width: 574px) {
+  .top-page-section .top-page-content .top-page-content-container {
+    padding: unset;
+  }
+  .top-page-section .top-page-content .top-page-content-container .name h1 {
+    font-size: 3.8rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .profession h1 {
+    font-size: 3.4rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .info p {
+    font-size: 1.4rem;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 80%;
+  }
+  .projects-section .projects-section-container {
+    width: 90%;
+  }
+  .projects-section .projects-section-container .projects-section-details {
+    grid-template-columns: 1fr;
+  }
+  .send-message-section .send-message-container {
+    width: 80%;
+  }
+  .send-message-section .send-message-container .send-message-container-details #form input, .send-message-section .send-message-container .send-message-container-details #form textarea {
+    font-size: 1.4rem;
+  }
+  .send-message-section .send-message-container h1 {
+    font-size: 3rem;
+  }
+  .send-message-section .send-message-container p {
+    font-size: 1.6rem;
+  }
+  .contact-section .contact-section-container {
+    width: 83%;
+  }
+  .contact-section .contact-section-container .contact-me h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 478px) {
+  .top-page-section .top-page-content {
+    width: 100%;
+  }
+  .top-page-section .top-page-content .top-page-content-container .name h1 {
+    font-size: 3.4rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .profession h1 {
+    font-size: 2.8rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .info p {
+    font-size: 1.5rem;
+  }
+  .about-me-section .about-me-section-header-and-info {
+    width: 85%;
+  }
+  .contact-section .contact-section-container .contact-me h1 {
+    font-size: 2.8rem;
+  }
+  .contact-section .contact-section-container .contact-me a {
+    font-size: 2.5rem;
+  }
+  .contact-section .contact-section-container .contact-section-email-and-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-section .contact-section-container .contact-section-email-and-links .contact-section-links {
+    margin-top: 4rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  .top-page-section .top-page-content .top-page-content-container {
+    width: 90%;
+  }
+  .top-page-section .top-page-content .top-page-content-container .name h1 {
+    font-size: 3.2rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .profession h1 {
+    font-size: 2.6rem;
+  }
+  .top-page-section .top-page-content .top-page-content-container .info p {
+    font-size: 1.4rem;
+  }
+}
+.hamburger-button.hamburgerclicked {
+  position: fixed;
+}
+.hamburger-button.hamburgerclicked span {
+  background-color: rgb(255, 255, 255);
+}
+.hamburger-button.hamburgerclicked span:nth-child(1) {
+  width: 3.6rem;
+  transform: translateY(1rem) rotate(45deg);
+}
+.hamburger-button.hamburgerclicked span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-button.hamburgerclicked span:nth-child(3) {
+  transform: translateY(-0.8rem) rotate(-45deg);
+}
+
+body.hideOverflow {
+  overflow: hidden;
+}
+
+.page-header .page-header-container .nav-bar .page-header-links.show-links {
+  right: 0;
+}/*# sourceMappingURL=style.css.map */
