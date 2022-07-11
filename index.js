@@ -8,8 +8,10 @@ window.addEventListener('load',()=>{
     linksClicked() 
     animateAboutSection()
     animateProjectsSection()
+    pinSendMessageSection()
     animateSendMessageSection()
     animateContactSection()
+
 
 })  
 
@@ -21,6 +23,8 @@ const aLinks = document.querySelectorAll('.menu-links-items-a')  //the a tags in
 const projectsInfoDiv = document.querySelectorAll('.project-info') //all the divs showing the info about my projects
 
 const submitBtn = document.querySelector('#submitButton') //the button on the send meessage section
+
+
 
 
 //FUNCTION FOR THE MOUSE FOLLOWER
@@ -66,6 +70,22 @@ function cursorAnimation(){
         hideTimeout: 300,
         hideMediaTimeout: 300
     });
+
+    //HIDING THE CURSOR FOLLOWER WHEN ON INPUTS
+    const inputAndTextarea = document.querySelectorAll('.sendMessageSectionInputs');
+
+    inputAndTextarea.forEach((item)=>{
+        
+        item.addEventListener('mouseenter', () => {
+            cursor.hide();
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            cursor.show();
+        });
+
+    })
+
 
      //SETTING TEXT TO THE SOCIAL MEDIA ICONS FIXED ON THE PAGE
      document.querySelector('#linkedinSocialLink').addEventListener('mouseenter',()=>{
@@ -115,7 +135,7 @@ function cursorAnimation(){
 
     //adding image to the cursor when hovering over the linkedin link
     ContactSectionLinkedin .addEventListener('mouseenter', () => {
-        cursor.setImg('images/llinkedinimage.png')
+        cursor.setImg('images/linkedinImage.png')
 
     });
 
@@ -162,15 +182,24 @@ function cursorAnimation(){
 
 //FUNCTION TO SHOW THE MENU LINKS
 function showLInks(){
-    //TIMELINE TO REVEAL THE LINKS WHEN THE BUTTON IS CLICKED
-    let navlinksTl  = gsap.timeline({paused:true})
-    navlinksTl.to(navlinks,{clipPath:'circle(70.7% at 50% 50%)'})
+    //TIMLINE TO ANIMATE THE HEADER LINKS WHEN THE BUTTON IS CLICKED
+    aTagsTl =  gsap.timeline({paused:true})
+    aTagsTl.from('.menu-links-items',{x:-22,stagger:.15})
+   
 
     hamburgerButton.addEventListener('click',()=>{
 
         hamburgerButton.classList.toggle('hamburgerclicked')
-        // document.body.classList.toggle('hideOverflow')
         navlinks.classList.toggle('show-links')
+        
+        //animating the links only if the nav menu is showing
+        if(navlinks.classList.contains('show-links')){
+            aTagsTl.play()
+        }
+
+        else{
+            aTagsTl.reverse()
+        }
 
     })
 }
@@ -222,12 +251,10 @@ function allTimelines(){
         
         item.addEventListener('mouseenter',()=>{
             projectsInfoDivTl.play()
-            console.log('enter');
         })
 
         item.addEventListener('mouseleave',()=>{
         projectsInfoDivTl.reverse()  
-        console.log('leave');      
         })
     })
 
@@ -253,7 +280,7 @@ function allTimelines(){
 }
 
 
-//FUNCTION TO HIDE THE MENU LINKS CONTAINER WHEN A LINK IS CLICKED
+//FUNCTION TO HIDE THE MENU LINKS WHEN A LINK IS CLICKED
 function linksClicked(){
 
     aLinks.forEach((item)=>{
@@ -284,7 +311,7 @@ function animateAboutSection(){
     })
     
     
-    aboutSectionTl.from('.about-me-title, .about-paragraph, .image', {opacity:0,y:46})
+    aboutSectionTl.fromTo('.about-me-title, .about-paragraph, .image', {opacity:0,y:46},{opacity:1,y:0})
     
     
 }
@@ -293,7 +320,8 @@ function animateProjectsSection(){
     let ProjectsSectionTl = gsap.timeline({
         scrollTrigger:{
             trigger:'.projects-section',
-            start:'top 90%',
+            start:'top 80%',
+            // start:'top center',
             duration:.6,
             // markers:true,
             ease:'Power0.easeNone',
@@ -302,15 +330,57 @@ function animateProjectsSection(){
     
         }
     })
-    
+   
     ProjectsSectionTl.fromTo('.projects-section',{opacity:0},{opacity:1})
 }
 
-function animateSendMessageSection(){
 
+
+//FUNCTION TO PIN THE SEND MESSAGE SECTION
+function pinSendMessageSection(){
+    let pinSendMessageSectionTl = gsap.timeline({
+        scrollTrigger:{
+            trigger:'.send-message-section',
+            start:'top top',
+            // markers:true,
+            pin:true,
+            pinSpacing:false,
+    
+            duration:3,
+            // scrub:.5,
+            ease:'Power0.easeNone'
+    
+        }
+    })
+    
+}
+
+function animateSendMessageSection(){
     let sendMessageSectionTl = gsap.timeline({
         scrollTrigger:{
             trigger:'.send-message-section',
+            start:'top 50%',
+            // markers:true,
+            ease:'bounce.easeOut',
+            duration:.6,
+            toggleActions:'play none none reverse'
+    
+    
+        }
+    })
+    sendMessageSectionTl.from('.sendMessageSectionInputs',{y:22,opacity:0,stagger:.1})
+            .fromTo('#submitButton',{clipPath:'inset(0% 100% 0% 0%)'},{duration:.4,clipPath:'inset(0% 0% 0% 0%)'})
+
+}
+
+
+
+
+function animateContactSection(){
+
+    let contactSectionTl = gsap.timeline({
+        scrollTrigger:{
+            trigger:'.contact-section',
             start:'top 50%',
             // markers:true,
             ease:'back.easeOut',
@@ -322,36 +392,8 @@ function animateSendMessageSection(){
         }
     })
     
-    sendMessageSectionTl.from('#sendMessageHeader, #name,#email, #message, #sendMessageText',{opacity:0,y:64})
-                        .fromTo('#submitButton',{opacity:0,clipPath:'inset(100% 0% 0% 0%)'},{opacity:1, clipPath:'inset(0% 0% 0% 0%)'},'+=.2')
-    
+    contactSectionTl.from('.contact-section-icons',{y:22,opacity:0,stagger:.1})
     
 }
-
-function animateContactSection(){
-    let contactSectionTl = gsap.timeline({
-        scrollTrigger:{
-            trigger:'.contact-section',
-            start:'top 90%',
-            // markers:true,
-            ease:'bounce.easeOut',
-            ease:'Power0.easeNone',
-            duration:.8,
-            toggleActions:'play none none reverse'
-    
-    
-        }
-    })
-    
-    
-    // contactSectionTl.fromTo(' .contact-section',{opacity:.5},{opacity:1})
-    contactSectionTl.from('.contact-section',{duration:.4,opacity:.2,scaleX:.95})
-                    .from('#contact-me-header',{y:66,opacity:0},'<')
-                    .from('.contact-section-icons',{opacity:0,y:33,stagger:.1},'<')
-    
-    
-}
-
-
 
 
